@@ -4,125 +4,79 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="联系我们" description="联系集信智能，获取企业 AI 解决方案演示与咨询服务。">
+<Layout title="联系我们" description="联系山西极芯智能科技有限公司。GEOAI搜索优化、AI智能体定制、AI数字人服务，免费获取企业AI曝光诊断。">
   <Header />
   <section class="page-hero">
     <div class="container">
-      <span class="badge">联系我们</span>
-      <h1>与我们取得联系</h1>
-      <p>开启您的企业智能化升级之旅</p>
+      <span class="section-label">联系我们</span>
+      <h1>一起开启AI获客新赛道</h1>
+      <p>免费获取企业AI搜索曝光诊断，了解你的品牌在AI中的真实位置</p>
     </div>
   </section>
-
-  <section class="contact-section">
+  <section class="contact-main">
     <div class="container contact-grid">
       <div class="contact-info">
         <h2>联系方式</h2>
         <div class="info-item">
-          <span class="info-icon">📧</span>
-          <div>
-            <h4>邮箱</h4>
-            <a href="mailto:contact@jixinzn.cn">contact@jixinzn.cn</a>
-          </div>
+          <span class="info-label">电话</span>
+          <a href="tel:19036173963" class="info-value accent">19036173963</a>
         </div>
         <div class="info-item">
-          <span class="info-icon">📞</span>
-          <div>
-            <h4>电话</h4>
-            <a href="tel:400-888-8888">400-888-8888</a>
-          </div>
+          <span class="info-label">邮箱</span>
+          <a href="mailto:3238984729@qq.com" class="info-value">3238984729@qq.com</a>
         </div>
         <div class="info-item">
-          <span class="info-icon">📍</span>
-          <div>
-            <h4>地址</h4>
-            <p>北京市海淀区中关村科技园</p>
-          </div>
+          <span class="info-label">地址</span>
+          <span class="info-value">山西省太原市尖草坪区中北大街66号9幢四层A区033室</span>
         </div>
         <div class="info-item">
-          <span class="info-icon">🕐</span>
-          <div>
-            <h4>工作时间</h4>
-            <p>周一至周五 9:00 - 18:00</p>
-          </div>
+          <span class="info-label">服务时间</span>
+          <span class="info-value">工作日 9:00 - 18:00</span>
         </div>
+        <div class="divider"></div>
+        <p class="response-note">收到您的咨询后，我们将在2小时内电话回复。</p>
       </div>
-      <form class="contact-form" netlify data-netlify="true" name="contact" method="POST">
+      <form class="contact-form card" netlify name="contact" method="POST">
         <input type="hidden" name="form-name" value="contact" />
-        <h2>发送消息</h2>
+        <h3>在线咨询</h3>
         <div class="form-group">
-          <label for="name">姓名 *</label>
-          <input type="text" id="name" name="name" required />
+          <label>姓名 *</label>
+          <input type="text" name="name" required />
         </div>
         <div class="form-group">
-          <label for="email">邮箱 *</label>
-          <input type="email" id="email" name="email" required />
+          <label>手机号 *</label>
+          <input type="tel" name="phone" required />
         </div>
         <div class="form-group">
-          <label for="company">公司名称</label>
-          <input type="text" id="company" name="company" />
+          <label>所属行业</label>
+          <input type="text" name="industry" />
         </div>
         <div class="form-group">
-          <label for="message">留言 *</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <label>需求描述</label>
+          <textarea name="message" rows="4"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-submit">提交留言 →</button>
+        <button type="submit" class="btn btn-primary" style="width:100%">提交咨询</button>
       </form>
     </div>
   </section>
-
   <Footer />
 </Layout>
-
 <style>
-  .page-hero {
-    padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-    text-align: center;
-  }
-  .page-hero h1 { font-size: 2.75rem; font-weight: 800; margin: 1rem 0 0.5rem; }
-  .page-hero p { color: var(--text-light); font-size: 1.1rem; }
-  .badge {
-    display: inline-block;
-    background: rgba(37,99,235,0.1);
-    color: var(--primary);
-    padding: 0.35rem 1rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-  .contact-section { padding: 4rem 0; }
+  .contact-main { background: var(--bg-primary); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-  .contact-info h2 { font-size: 1.75rem; margin-bottom: 2rem; }
-  .info-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
-  .info-icon { font-size: 1.5rem; }
-  .info-item h4 { font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.25rem; }
-  .info-item a, .info-item p { font-size: 1rem; color: var(--text); }
-  .contact-form {
-    background: var(--bg-alt);
-    padding: 2.5rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-  }
-  .contact-form h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+  .contact-info h2 { font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 2rem; }
+  .info-item { margin-bottom: 1.25rem; }
+  .info-label { font-size: 0.75rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; display: block; margin-bottom: 0.25rem; }
+  .info-value { font-size: 0.95rem; color: var(--text-primary); display: block; }
+  .info-value.accent { color: var(--accent); font-weight: 600; }
+  .response-note { font-size: 0.85rem; color: var(--text-secondary); }
+  .contact-form h3 { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.5rem; }
   .form-group { margin-bottom: 1.25rem; }
-  .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 0.35rem; }
   .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: border-color 0.2s;
+    width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius);
+    font-family: inherit; font-size: 0.9375rem; background: white; color: var(--text-primary);
   }
-  .form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
-  }
-  .btn-submit { width: 100%; justify-content: center; }
-  @media (max-width: 768px) {
-    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
 </style>
