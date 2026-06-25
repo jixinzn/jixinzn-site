@@ -1,0 +1,76 @@
+﻿# Decap CMS Configuration
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: github
+  repo: jixinzn/jixinzn-site
+  branch: main
+  base_url: https://www.jixinzn.cn
+  auth_endpoint: /.netlify/functions/auth  # 需要部署 OAuth 代理
+
+# 也可以使用 Git Gateway 方式 (不依赖 Vercel Functions):
+# backend:
+#   name: git-gateway
+#   branch: main
+
+local_backend: false
+publish_mode: editorial_workflow
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "pages"
+    label: "页面内容"
+    label_singular: "页面"
+    folder: "src/content/pages"
+    create: true
+    delete: false
+    format: "frontmatter"
+    fields:
+      - { label: "页面标题", name: "title", widget: "string" }
+      - { label: "页面路径", name: "slug", widget: "string" }
+      - { label: "SEO 描述", name: "description", widget: "text", required: false }
+      - { label: "页面内容", name: "body", widget: "markdown" }
+
+  - name: "blog"
+    label: "博客文章"
+    label_singular: "文章"
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    format: "frontmatter"
+    preview_path: "blog/{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "发布日期", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "更新日期", name: "updatedDate", widget: "datetime", format: "YYYY-MM-DD", required: false }
+      - { label: "标签", name: "tags", widget: "list", default: ["AI"] }
+      - { label: "封面图片", name: "image", widget: "image", required: false }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "products"
+    label: "产品内容"
+    label_singular: "产品"
+    folder: "src/content/products"
+    create: true
+    delete: false
+    format: "frontmatter"
+    fields:
+      - { label: "产品名称", name: "title", widget: "string" }
+      - { label: "产品描述", name: "description", widget: "text" }
+      - { label: "图标", name: "icon", widget: "string", required: false }
+      - { label: "内容", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "网站设置"
+    files:
+      - label: "全局设置"
+        name: "global"
+        file: "src/content/settings/global.json"
+        fields:
+          - { label: "网站标题", name: "site_title", widget: "string" }
+          - { label: "网站描述", name: "site_description", widget: "text" }
+          - { label: "联系邮箱", name: "email", widget: "string" }
+          - { label: "联系电话", name: "phone", widget: "string" }
