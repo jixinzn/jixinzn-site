@@ -1,4 +1,11 @@
 ﻿---
+import '@fontsource/inter/300.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/inter/800.css';
+
 export interface Props {
   title: string;
   description: string;
@@ -7,102 +14,274 @@ export interface Props {
 }
 
 const { title, description, image, canonicalURL } = Astro.props;
-const site = "https://www.jixinzn.cn";
-const defaultImage = "/uploads/og-image.jpg";
-const ogImage = image || defaultImage;
+const site = 'https://www.jixinzn.cn';
+const ogImage = image || '/uploads/og-image.jpg';
 const currentURL = canonicalURL || Astro.url.pathname;
-const pageTitle = `${title} | 集信智能`;
+const pageTitle = `${title} — 极芯智能`;
 ---
 
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
-    <meta name="keywords" content="集信智能, AI, 人工智能, 企业智能化, 智能客服, 大模型应用" />
-    <meta name="author" content="集信智能" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={`${site}${currentURL}`} />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content="极芯智能,GEOAI,AI搜索优化,AI智能体,AI数字人,企业AI获客,山西AI服务商" />
+  <meta name="author" content="山西极芯智能科技有限公司" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={`${site}${currentURL}`} />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={`${site}${currentURL}`} />
-    <meta property="og:image" content={`${site}${ogImage}`} />
-    <meta property="og:site_name" content="集信智能" />
-    <meta property="og:locale" content="zh_CN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={`${site}${currentURL}`} />
+  <meta property="og:image" content={`${site}${ogImage}`} />
+  <meta property="og:site_name" content="极芯智能" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={`${site}${ogImage}`} />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${site}${ogImage}`} />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "山西极芯智能科技有限公司",
+      "url": "https://www.jixinzn.cn",
+      "description": "山西本土GEOAI生成式搜索优化服务商，专注AI智能体定制、AI数字人服务与企业AI获客解决方案",
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "太原",
+        "addressRegion": "山西",
+        "addressCountry": "CN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "19036173963",
+        "contactType": "customer service"
+      }
+    }
+  </script>
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "集信智能",
-  "url": "https://www.jixinzn.cn",
-  "description": "让 AI 赋能每一个企业，驱动智能未来"
-}
-    </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <style>
-      :root {
-        --primary: #2563eb;
-        --primary-dark: #1d4ed8;
-        --secondary: #7c3aed;
-        --text: #1e293b;
-        --text-light: #64748b;
-        --bg: #ffffff;
-        --bg-alt: #f8fafc;
-        --border: #e2e8f0;
-        --radius: 12px;
-        --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
-        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
-        --max-width: 1200px;
-        --font-sans: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
-      }
-      *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; font-size: 16px; }
-      body {
-        font-family: var(--font-sans);
-        color: var(--text);
-        background: var(--bg);
-        line-height: 1.7;
-        -webkit-font-smoothing: antialiased;
-      }
-      a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
-      a:hover { color: var(--primary-dark); }
-      img { max-width: 100%; height: auto; }
-      .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
-      .prose { max-width: 800px; margin: 0 auto; }
-      .prose h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; }
-      .prose h2 { font-size: 1.8rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
-      .prose h3 { font-size: 1.4rem; font-weight: 600; margin: 2rem 0 0.75rem; }
-      .prose p { margin-bottom: 1.25rem; font-size: 1.0625rem; }
-      .prose ul,.prose ol { margin: 1rem 0 1.5rem 1.5rem; }
-      .prose li { margin-bottom: 0.5rem; }
-      .prose img { border-radius: var(--radius); margin: 1.5rem 0; box-shadow: var(--shadow); }
-      .prose blockquote {
-        border-left: 4px solid var(--primary);
-        padding: 0.75rem 1.25rem; margin: 1.5rem 0;
-        background: var(--bg-alt);
-        border-radius: 0 var(--radius) var(--radius) 0;
-        color: var(--text-light); font-style: italic;
-      }
-      .prose code { background: var(--bg-alt); padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
-      .prose pre {
-        background: #1e293b; color: #e2e8f0;
-        padding: 1.25rem; border-radius: var(--radius);
-        overflow-x: auto; margin: 1.5rem 0;
-      }
-    </style>
-  </head>
-  <body>
-    <slot />
-  </body>
+  <!-- 全局样式 -->
+  <style>
+    :root {
+      --bg-primary: #F5F5F7;
+      --bg-card: #FAFAFA;
+      --bg-dark: #1D1D1F;
+      --text-primary: #1D1D1F;
+      --text-body: #333333;
+      --text-secondary: #86868B;
+      --text-inverse: #FFFFFF;
+      --accent: #B8960C;
+      --accent-hover: #D4AF37;
+      --accent-dark-bg: #FFD700;
+      --border: #D2D2D7;
+      --radius: 6px;
+      --max-width: 1200px;
+      --font-sans: 'Inter', 'PingFang SC', 'Source Han Sans CN', 'Microsoft YaHei', sans-serif;
+      --font-mono: 'SF Mono', 'JetBrains Mono', monospace;
+      --transition-smooth: 0.3s ease;
+      --transition-reveal: 0.6s ease;
+    }
+
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-body);
+      background: var(--bg-primary);
+      line-height: 1.6;
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+    a { color: var(--text-primary); text-decoration: none; transition: color var(--transition-smooth); }
+    a:hover { color: var(--accent); }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Container */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+
+    /* Section header */
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 640px;
+    }
+
+    /* Section spacing */
+    section { padding: 6rem 0; }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8125rem 2rem;
+      border-radius: var(--radius);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: all var(--transition-smooth);
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      min-height: 48px;
+      min-width: 48px;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--text-inverse);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: var(--text-inverse);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--text-primary);
+    }
+    .btn-outline:hover {
+      background: var(--text-primary);
+      color: var(--text-inverse);
+    }
+    .btn-text {
+      background: none;
+      color: var(--text-primary);
+      padding: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+    }
+    .btn-text:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 2rem 0;
+    }
+    .divider-accent {
+      background: var(--accent);
+      width: 40px;
+      height: 2px;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 8rem 0 4rem;
+      text-align: center;
+      background: var(--bg-primary);
+    }
+    .page-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+    .page-hero p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Prose for MDX/Markdown content */
+    .prose { max-width: 760px; margin: 0 auto; }
+    .prose h1, .prose h2, .prose h3 { color: var(--text-primary); letter-spacing: -0.02em; }
+    .prose h1 { font-size: 2.25rem; font-weight: 700; margin: 3rem 0 1rem; line-height: 1.2; }
+    .prose h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 0.75rem; }
+    .prose h3 { font-size: 1.15rem; font-weight: 600; margin: 2rem 0 0.5rem; }
+    .prose p { margin-bottom: 1.25rem; line-height: 1.8; }
+    .prose ul, .prose ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .prose li { margin-bottom: 0.5rem; line-height: 1.7; }
+    .prose strong { color: var(--text-primary); font-weight: 600; }
+    .prose code { font-family: var(--font-mono); background: var(--bg-card); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+    .prose pre { background: var(--bg-dark); color: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); overflow-x: auto; margin: 1.5rem 0; font-size: 0.9rem; }
+    .prose blockquote { border-left: 2px solid var(--accent); padding: 0.75rem 1.25rem; margin: 1.5rem 0; color: var(--text-secondary); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container { padding: 0 1.25rem; }
+      .section-title { font-size: 1.75rem; }
+      section { padding: 4rem 0; }
+      .page-hero { padding: 5rem 0 2.5rem; }
+      .page-hero h1 { font-size: 2rem; }
+      .btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; }
+    }
+    @media (max-width: 480px) {
+      .section-title { font-size: 1.5rem; }
+    }
+  </style>
+
+  <!-- Intersection Observer for reveal animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 100);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+</head>
+<body>
+  <slot />
+</body>
 </html>
