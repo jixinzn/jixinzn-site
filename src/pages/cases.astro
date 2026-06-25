@@ -1,0 +1,55 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const cases = [
+  { tag:'教培', title:'太原某编程培训机构', desc:'AI搜索排名从无到第1位', metric:'85%', metricLabel:'AI搜索曝光增长', detail:{ bg:'成立于2019年的太原本地编程培训品牌', pain:'在传统搜索引擎排名长期处于第3页以后，AI搜索平台品牌提及几乎为零', solution:'搭建品牌信源矩阵+AI智能体客服+本地化关键词GEO优化', result:'优化2个月后，豆包搜索"太原编程培训"排名第1位，月度AI搜索曝光增长85%，获客线索增长120%' } },
+  { tag:'本地生活', title:'某餐饮连锁品牌', desc:'AI智能体夜间获客转化率提升3.2倍', metric:'3.2x', metricLabel:'获客转化提升', detail:{ bg:'山西省内拥有12家门店的餐饮连锁品牌', pain:'人工客服夜间无法响应，大量咨询流失', solution:'定制AI智能体客服系统，支持菜品推荐、门店查询、预约订座', result:'上线后夜间客户响应率100%，获客转化率提升3.2倍，人工客服工作量降低60%' } },
+  { tag:'制造业', title:'山西某精密制造企业', desc:'月度有效线索从50条增至400+', metric:'8x', metricLabel:'线索量增长', detail:{ bg:'从事精密零部件生产的中型制造企业', pain:'传统展会和电话开发成本高、效率低，线上获客几乎为零', solution:'B2B行业GEO优化+AI品牌信源矩阵+智能询盘系统', result:'优化3个月后，月度有效询盘从50条增长至400+，单条获客成本降至原来的1/8' } },
+];
+---
+
+<Layout title="客户案例" description="极芯智能GEOAI搜索优化真实客户案例，覆盖教培、本地生活、制造业等行业。">
+  <Header />
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">案例</span>
+      <h1>真实客户的AI增长成果</h1>
+    </div>
+  </section>
+  <section class="cases">
+    <div class="container">
+      {cases.map((c, i) => (
+        <div class="case-card card reveal">
+          <div class="case-header">
+            <span class="case-tag">{c.tag}</span>
+            <h3>{c.title}</h3>
+            <p>{c.desc}</p>
+          </div>
+          <div class="case-metric-block">
+            <span class="metric-value"><span class="accent">{c.metric}</span></span>
+            <span class="metric-label">{c.metricLabel}</span>
+          </div>
+          <div class="case-detail">
+            <div><span class="detail-label">客户背景</span><p>{c.detail.bg}</p></div>
+            <div><span class="detail-label">核心痛点</span><p>{c.detail.pain}</p></div>
+            <div><span class="detail-label">解决方案</span><p>{c.detail.solution}</p></div>
+            <div><span class="detail-label">落地效果</span><p>{c.detail.result}</p></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  <Footer />
+</Layout>
+<style>
+  .cases { background: var(--bg-primary); }
+  .case-card { margin-bottom: 1.5rem; }
+  .case-header { margin-bottom: 1.5rem; }
+  .case-tag { font-size: 0.75rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; }
+  .case-header h3 { font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin: 0.5rem 0; }
+  .case-header p { color: var(--text-secondary); font-size: 0.95rem; }
+  .case-metric-block { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.25rem 0; margin-bottom: 1.5rem; }
+  .detail-label { font-size: 0.75rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; display: inline-block; margin: 1rem 0 0.25rem; }
+  .case-detail p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+</style>
