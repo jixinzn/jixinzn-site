@@ -1,0 +1,123 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="关于我们" description="了解集信智能的企业使命、核心团队与发展历程。我们致力于用 AI 赋能每一个企业。">
+  <Header />
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">关于我们</span>
+      <h1>用 AI 驱动智能未来</h1>
+      <p>集信智能成立于 2024 年，致力于为企业提供端到端的 AI 解决方案</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="container mission-content">
+      <h2>我们的使命</h2>
+      <p>在人工智能技术飞速发展的今天，我们深信 AI 不应只是少数科技巨头的专属工具。集信智能的使命是<strong>让每一家企业都能以可负担的成本、最便捷的方式，享受 AI 技术带来的效率提升与业务增长</strong>。</p>
+      <p>我们提供从咨询规划、产品落地到持续运营的全流程 AI 服务，确保每一个项目都能产生实实在在的商业价值。</p>
+    </div>
+  </section>
+
+  <section class="values">
+    <div class="container">
+      <h2>核心价值观</h2>
+      <div class="values-grid">
+        <div class="value-item">
+          <h3>🎯 客户第一</h3>
+          <p>深入理解客户业务，交付真正有用的产品</p>
+        </div>
+        <div class="value-item">
+          <h3>🚀 创新驱动</h3>
+          <p>持续跟踪前沿 AI 技术，保持产品领先</p>
+        </div>
+        <div class="value-item">
+          <h3>🔒 安全可信</h3>
+          <p>数据安全与隐私保护是我们的生命线</p>
+        </div>
+        <div class="value-item">
+          <h3>🤝 开放共赢</h3>
+          <p>与合作伙伴共同构建 AI 生态</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="container">
+      <h2>核心团队</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <h3>张明</h3>
+          <span class="team-role">创始人 & CEO</span>
+          <p>前某大厂 AI 业务负责人，10年 AI 行业经验</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <h3>李华</h3>
+          <span class="team-role">CTO</span>
+          <p>自然语言处理专家，多项 AI 专利持有者</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">👤</div>
+          <h3>王芳</h3>
+          <span class="team-role">产品副总裁</span>
+          <p>前知名 SaaS 公司产品总监，擅长企业级产品设计</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    text-align: center;
+  }
+  .page-hero h1 { font-size: 2.75rem; font-weight: 800; margin: 1rem 0 0.5rem; }
+  .page-hero p { color: var(--text-light); font-size: 1.1rem; }
+  .badge {
+    display: inline-block;
+    background: rgba(37,99,235,0.1);
+    color: var(--primary);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .mission { padding: 4rem 0; }
+  .mission-content { max-width: 800px; margin: 0 auto; }
+  .mission h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+  .mission p { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.25rem; }
+  .values { padding: 4rem 0; background: var(--bg-alt); }
+  .values h2 { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; }
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .value-item { text-align: center; padding: 2rem; }
+  .value-item h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .value-item p { color: var(--text-light); font-size: 0.95rem; }
+  .team { padding: 4rem 0; }
+  .team h2 { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .team-card {
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.3s;
+  }
+  .team-card:hover { box-shadow: var(--shadow-lg); border-color: var(--primary); }
+  .team-avatar { font-size: 3rem; margin-bottom: 1rem; }
+  .team-card h3 { font-size: 1.2rem; margin-bottom: 0.25rem; }
+  .team-role { color: var(--primary); font-size: 0.9rem; font-weight: 600; }
+  .team-card p { color: var(--text-light); font-size: 0.9rem; margin-top: 0.75rem; }
+  @media (max-width: 768px) {
+    .values-grid, .team-grid { grid-template-columns: 1fr; }
+  }
+</style>

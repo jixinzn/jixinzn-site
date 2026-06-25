@@ -1,0 +1,103 @@
+﻿<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>集信智能</h3>
+        <p>让 AI 赋能每一个企业，驱动智能未来。</p>
+        <div class="social-links">
+          <a href="#" aria-label="微信公众号">微</a>
+          <a href="#" aria-label="知乎">知</a>
+          <a href="#" aria-label="B站">B</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>产品服务</h4>
+        <a href="/products#ai-assistant">AI 智能助手</a>
+        <a href="/products#knowledge">知识库系统</a>
+        <a href="/products#workflow">流程自动化</a>
+      </div>
+      <div class="footer-links">
+        <h4>关于我们</h4>
+        <a href="/about">公司介绍</a>
+        <a href="/about#team">核心团队</a>
+        <a href="/contact">联系我们</a>
+      </div>
+      <div class="footer-links">
+        <h4>资源</h4>
+        <a href="/blog">行业洞察</a>
+        <a href="/privacy">隐私政策</a>
+        <a href="/terms">服务条款</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} 集信智能 All rights reserved.</p>
+      <p>京ICP备2024XXXXXX号</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .social-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+  }
+  .social-links a:hover { background: var(--primary); }
+  .footer-links h4 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footer-links a {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: white; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>

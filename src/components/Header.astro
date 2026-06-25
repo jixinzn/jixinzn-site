@@ -1,0 +1,116 @@
+﻿<header class="header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+        <path d="M8 12L16 8l8 4v8l-8 4-8-4V12z" fill="white" fill-opacity="0.9"/>
+        <circle cx="16" cy="16" r="3" fill="white"/>
+        <defs>
+          <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+            <stop stop-color="#2563eb"/>
+            <stop offset="1" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="logo-text">集信智能</span>
+    </a>
+    <nav class="nav">
+      <a href="/">首页</a>
+      <a href="/products">产品服务</a>
+      <a href="/about">关于我们</a>
+      <a href="/blog">行业洞察</a>
+      <a href="/contact" class="btn-nav">联系我们</a>
+    </nav>
+    <button class="menu-toggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text) !important;
+  }
+  .logo-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .nav a {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+  }
+  .nav a:hover::after { width: 100%; }
+  .btn-nav {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600 !important;
+  }
+  .btn-nav:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+  .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+  .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+  @media (max-width: 768px) {
+    .nav { display: none; }
+    .menu-toggle { display: flex; }
+  }
+</style>
+
+<script>
+  document.querySelector('.menu-toggle')?.addEventListener('click', () => {
+    const nav = document.querySelector('.nav');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.position = 'absolute';
+    nav.style.top = '70px';
+    nav.style.left = '0';
+    nav.style.right = '0';
+    nav.style.background = 'white';
+    nav.style.padding = '1rem';
+    nav.style.boxShadow = 'var(--shadow-lg)';
+    nav.style.gap = '1rem';
+  });
+</script>

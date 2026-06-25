@@ -1,0 +1,254 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="首页 - 企业AI智能化解决方案" description="集信智能为企业提供 AI 智能助手、知识库系统和流程自动化解决方案，助力企业实现智能化升级。">
+  <Header />
+
+  <!-- Hero 区域 -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="badge">AI 驱动企业智能化升级</span>
+        <h1>让 <span class="gradient-text">AI</span> 赋能每一个企业</h1>
+        <p>集信智能提供端到端的企业 AI 解决方案，从智能客服到流程自动化，<br/>助力您的企业全面拥抱人工智能时代。</p>
+        <div class="hero-buttons">
+          <a href="/contact" class="btn btn-primary">免费咨询 →</a>
+          <a href="/products" class="btn btn-outline">了解产品</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>100+</strong><span>企业客户</span></div>
+          <div class="stat"><strong>99.9%</strong><span>系统可用率</span></div>
+          <div class="stat"><strong>24/7</strong><span>技术支持</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="gradient-sphere"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心优势 -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">核心能力</span>
+        <h2>AI 驱动的三大核心产品</h2>
+        <p>覆盖企业智能化全场景需求</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI 智能助手</h3>
+          <p>基于大语言模型构建的智能对话系统，7×24小时自动响应客户咨询，支持多轮对话与上下文理解。</p>
+          <a href="/products#ai-assistant" class="feature-link">了解更多 →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📚</div>
+          <h3>智能知识库</h3>
+          <p>企业级知识管理平台，支持文档智能解析、知识图谱构建、智能检索，让知识资产发挥最大价值。</p>
+          <a href="/products#knowledge" class="feature-link">了解更多 →</a>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>流程自动化</h3>
+          <p>结合 RPA 与 AI 的智能流程自动化平台，自动处理重复性工作，提升运营效率 10 倍以上。</p>
+          <a href="/products#workflow" class="feature-link">了解更多 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 应用场景 -->
+  <section class="use-cases" id="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">应用场景</span>
+        <h2>助力多行业智能化转型</h2>
+        <p>为不同行业提供量身定制的 AI 解决方案</p>
+      </div>
+      <div class="cases-grid">
+        <div class="case-item">
+          <h3>🏦 金融行业</h3>
+          <p>智能客服、智能风控、自动化报表</p>
+        </div>
+        <div class="case-item">
+          <h3>🏥 医疗健康</h3>
+          <p>智能导诊、病历分析、药物推荐</p>
+        </div>
+        <div class="case-item">
+          <h3>🏪 零售电商</h3>
+          <p>智能推荐、库存预测、客户画像</p>
+        </div>
+        <div class="case-item">
+          <h3>🏭 制造业</h3>
+          <p>设备预测维护、质量检测、排产优化</p>
+        </div>
+        <div class="case-item">
+          <h3>📚 教育培训</h3>
+          <p>智能辅导、个性化学习路径、自动阅卷</p>
+        </div>
+        <div class="case-item">
+          <h3>🏢 企业服务</h3>
+          <p>智能 HR 助手、合同审核、会议纪要</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA 区域 -->
+  <section class="cta">
+    <div class="container cta-content">
+      <h2>开启您的企业智能化之旅</h2>
+      <p>立即联系我们，获取专属 AI 解决方案演示</p>
+      <a href="/contact" class="btn btn-primary btn-large">立即咨询 →</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f5f3ff 100%);
+    overflow: hidden;
+  }
+  .hero-content { display: flex; align-items: center; gap: 4rem; }
+  .hero-text { flex: 1; }
+  .badge {
+    display: inline-block;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+  .hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    color: var(--text);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-text p {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .hero-buttons { display: flex; gap: 1rem; margin-bottom: 2.5rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 2rem; border-radius: 50px;
+    font-weight: 600; font-size: 1rem;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+    color: white;
+  }
+  .btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+  }
+  .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+  }
+  .btn-large { padding: 1rem 2.5rem; font-size: 1.1rem; }
+  .hero-stats { display: flex; gap: 2.5rem; }
+  .stat { display: flex; flex-direction: column; }
+  .stat strong { font-size: 1.75rem; color: var(--primary); }
+  .stat span { font-size: 0.85rem; color: var(--text-light); }
+
+  .hero-visual { flex: 1; display: flex; justify-content: center; }
+  .gradient-sphere {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.1));
+    border-radius: 50%;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+  }
+
+  /* Section */
+  section { padding: 5rem 0; }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-header .badge { margin-bottom: 1rem; }
+  .section-header h2 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .section-header p { color: var(--text-light); font-size: 1.1rem; }
+
+  /* Features */
+  .features { background: var(--bg-alt); }
+  .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+  }
+  .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .feature-card h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+  .feature-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+  .feature-link { color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+
+  /* Use Cases */
+  .cases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .case-item {
+    padding: 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all 0.2s;
+  }
+  .case-item:hover { border-color: var(--primary); box-shadow: var(--shadow); }
+  .case-item h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .case-item p { color: var(--text-light); font-size: 0.9rem; }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    text-align: center;
+  }
+  .cta-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .cta h2 { color: white; font-size: 2.25rem; }
+  .cta p { color: rgba(255,255,255,0.85); font-size: 1.1rem; }
+  .cta .btn-primary {
+    background: white; color: var(--primary);
+  }
+  .cta .btn-primary:hover { background: #f0f9ff; color: var(--primary-dark); }
+
+  @media (max-width: 768px) {
+    .hero-content { flex-direction: column; text-align: center; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-buttons { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .gradient-sphere { display: none; }
+    .features-grid, .cases-grid { grid-template-columns: 1fr; }
+  }
+</style>

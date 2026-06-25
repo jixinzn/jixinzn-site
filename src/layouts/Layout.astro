@@ -1,0 +1,108 @@
+﻿---
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const { title, description, image, canonicalURL } = Astro.props;
+const site = "https://www.jixinzn.cn";
+const defaultImage = "/uploads/og-image.jpg";
+const ogImage = image || defaultImage;
+const currentURL = canonicalURL || Astro.url.pathname;
+const pageTitle = `${title} | 集信智能`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="集信智能, AI, 人工智能, 企业智能化, 智能客服, 大模型应用" />
+    <meta name="author" content="集信智能" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={`${site}${currentURL}`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={`${site}${currentURL}`} />
+    <meta property="og:image" content={`${site}${ogImage}`} />
+    <meta property="og:site_name" content="集信智能" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site}${ogImage}`} />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "集信智能",
+  "url": "https://www.jixinzn.cn",
+  "description": "让 AI 赋能每一个企业，驱动智能未来"
+}
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #7c3aed;
+        --text: #1e293b;
+        --text-light: #64748b;
+        --bg: #ffffff;
+        --bg-alt: #f8fafc;
+        --border: #e2e8f0;
+        --radius: 12px;
+        --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+        --max-width: 1200px;
+        --font-sans: "PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+      }
+      *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; font-size: 16px; }
+      body {
+        font-family: var(--font-sans);
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+      a:hover { color: var(--primary-dark); }
+      img { max-width: 100%; height: auto; }
+      .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
+      .prose { max-width: 800px; margin: 0 auto; }
+      .prose h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2; }
+      .prose h2 { font-size: 1.8rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
+      .prose h3 { font-size: 1.4rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+      .prose p { margin-bottom: 1.25rem; font-size: 1.0625rem; }
+      .prose ul,.prose ol { margin: 1rem 0 1.5rem 1.5rem; }
+      .prose li { margin-bottom: 0.5rem; }
+      .prose img { border-radius: var(--radius); margin: 1.5rem 0; box-shadow: var(--shadow); }
+      .prose blockquote {
+        border-left: 4px solid var(--primary);
+        padding: 0.75rem 1.25rem; margin: 1.5rem 0;
+        background: var(--bg-alt);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        color: var(--text-light); font-style: italic;
+      }
+      .prose code { background: var(--bg-alt); padding: 0.2rem 0.4rem; border-radius: 4px; font-size: 0.9em; }
+      .prose pre {
+        background: #1e293b; color: #e2e8f0;
+        padding: 1.25rem; border-radius: var(--radius);
+        overflow-x: auto; margin: 1.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

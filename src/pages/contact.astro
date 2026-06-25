@@ -1,0 +1,128 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="联系我们" description="联系集信智能，获取企业 AI 解决方案演示与咨询服务。">
+  <Header />
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">联系我们</span>
+      <h1>与我们取得联系</h1>
+      <p>开启您的企业智能化升级之旅</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>联系方式</h2>
+        <div class="info-item">
+          <span class="info-icon">📧</span>
+          <div>
+            <h4>邮箱</h4>
+            <a href="mailto:contact@jixinzn.cn">contact@jixinzn.cn</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <div>
+            <h4>电话</h4>
+            <a href="tel:400-888-8888">400-888-8888</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <div>
+            <h4>地址</h4>
+            <p>北京市海淀区中关村科技园</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🕐</span>
+          <div>
+            <h4>工作时间</h4>
+            <p>周一至周五 9:00 - 18:00</p>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" netlify data-netlify="true" name="contact" method="POST">
+        <input type="hidden" name="form-name" value="contact" />
+        <h2>发送消息</h2>
+        <div class="form-group">
+          <label for="name">姓名 *</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">邮箱 *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="company">公司名称</label>
+          <input type="text" id="company" name="company" />
+        </div>
+        <div class="form-group">
+          <label for="message">留言 *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">提交留言 →</button>
+      </form>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    text-align: center;
+  }
+  .page-hero h1 { font-size: 2.75rem; font-weight: 800; margin: 1rem 0 0.5rem; }
+  .page-hero p { color: var(--text-light); font-size: 1.1rem; }
+  .badge {
+    display: inline-block;
+    background: rgba(37,99,235,0.1);
+    color: var(--primary);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .contact-section { padding: 4rem 0; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .contact-info h2 { font-size: 1.75rem; margin-bottom: 2rem; }
+  .info-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+  .info-icon { font-size: 1.5rem; }
+  .info-item h4 { font-size: 0.9rem; color: var(--text-light); margin-bottom: 0.25rem; }
+  .info-item a, .info-item p { font-size: 1rem; color: var(--text); }
+  .contact-form {
+    background: var(--bg-alt);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+  }
+  .contact-form h2 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  }
+  .btn-submit { width: 100%; justify-content: center; }
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>

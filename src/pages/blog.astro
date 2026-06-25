@@ -1,0 +1,118 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="行业洞察 - AI 技术博客" description="集信智能行业洞察栏目，分享 AI 技术趋势、企业智能化实践案例与行业深度分析。">
+  <Header />
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge">行业洞察</span>
+      <h1>AI 行业前沿观察</h1>
+      <p>探索人工智能技术趋势与企业智能化最佳实践</p>
+    </div>
+  </section>
+
+  <section class="blog-list">
+    <div class="container">
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image">🤖</div>
+          <div class="blog-content">
+            <span class="blog-tag">技术前沿</span>
+            <h2>大语言模型在企业场景中的落地实践</h2>
+            <p>深入探讨如何将 LLM 技术有效整合到企业业务流程中，实现真正的业务价值。</p>
+            <div class="blog-meta">
+              <span>2025-06-15</span>
+              <a href="/blog/llm-enterprise-practice" class="read-more">阅读全文 →</a>
+            </div>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image">💡</div>
+          <div class="blog-content">
+            <span class="blog-tag">行业分析</span>
+            <h2>2025 年企业 AI 趋势报告</h2>
+            <p>从智能客服到流程自动化，盘点 2025 年最值得关注的企业 AI 应用趋势。</p>
+            <div class="blog-meta">
+              <span>2025-05-20</span>
+              <a href="/blog/ai-trends-2025" class="read-more">阅读全文 →</a>
+            </div>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image">🔒</div>
+          <div class="blog-content">
+            <span class="blog-tag">最佳实践</span>
+            <h2>企业 AI 数据安全与隐私保护指南</h2>
+            <p>分析企业部署 AI 系统时需要关注的数据安全风险与合规要求。</p>
+            <div class="blog-meta">
+              <span>2025-04-10</span>
+              <a href="/blog/ai-data-security" class="read-more">阅读全文 →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    padding: 5rem 0 3rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    text-align: center;
+  }
+  .page-hero h1 { font-size: 2.75rem; font-weight: 800; margin: 1rem 0 0.5rem; }
+  .page-hero p { color: var(--text-light); font-size: 1.1rem; }
+  .badge {
+    display: inline-block;
+    background: rgba(37,99,235,0.1);
+    color: var(--primary);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .blog-list { padding: 4rem 0; }
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 2rem; }
+  .blog-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .blog-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  }
+  .blog-content { padding: 1.5rem; }
+  .blog-tag {
+    display: inline-block;
+    background: rgba(37,99,235,0.1);
+    color: var(--primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .blog-content h2 { font-size: 1.25rem; margin-bottom: 0.75rem; line-height: 1.4; }
+  .blog-content p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; }
+  .blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--text-light);
+  }
+  .read-more { color: var(--primary); font-weight: 600; }
+</style>

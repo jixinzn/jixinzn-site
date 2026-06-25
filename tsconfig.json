@@ -1,0 +1,15 @@
+﻿{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "jsxImportSource": "astro",
+    "types": ["astro/client"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.astro"]
+}

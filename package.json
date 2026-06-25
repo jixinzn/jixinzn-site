@@ -1,0 +1,18 @@
+{
+  "name": "jixinzn-website",
+  "version": "1.0.0",
+  "description": "集信智能官方网站 - 基于 Astro + Decap CMS",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^5.0.0",
+    "isomorphic-git": "^1.38.5"
+  }
+}
