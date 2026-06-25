@@ -12,7 +12,11 @@
   "dependencies": {
     "@astrojs/mdx": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
+    "@fontsource/inter": "^5.2.8",
     "astro": "^5.0.0",
     "isomorphic-git": "^1.38.5"
+  },
+  "devDependencies": {
+    "vercel": "^54.17.0"
   }
 }
