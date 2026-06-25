@@ -1,0 +1,187 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="GEOAI服务" description="极芯智能GEOAI生成式搜索优化 — 让AI主动推荐你的品牌。AI智能体定制、AI数字人服务、企业AI获客方案。">
+  <Header />
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">GEOAI服务</span>
+      <h1>生成式搜索优化的新范式</h1>
+      <p>从被搜索到被推荐，让AI成为你的品牌代言人</p>
+    </div>
+  </section>
+
+  <!-- GEO vs SEO -->
+  <section class="comparison">
+    <div class="container">
+      <h2 class="reveal">GEOAI 对比 传统SEO</h2>
+      <div class="compare-table reveal">
+        <div class="compare-row compare-header">
+          <span>对比维度</span>
+          <span>传统SEO</span>
+          <span class="accent-col">GEOAI优化</span>
+        </div>
+        <div class="compare-row"><span>流量来源</span><span>搜索引擎结果页</span><span>AI平台推荐+搜索结果</span></div>
+        <div class="compare-row"><span>见效周期</span><span>3-6个月</span><span>1-2个月</span></div>
+        <div class="compare-row"><span>竞争力</span><span>关键词排名博弈</span><span>信源权重+语义匹配</span></div>
+        <div class="compare-row"><span>精准度</span><span>依赖关键词选取</span><span>AI自动匹配需求意图</span></div>
+        <div class="compare-row"><span>稳定性</span><span>算法波动直接影响排名</span><span>多AI平台信源矩阵更稳定</span></div>
+        <div class="compare-row"><span>覆盖范围</span><span>百度/谷歌/360</span><span>豆包/DeepSeek/Kimi/通义千问</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心服务 -->
+  <section class="service-details">
+    <div class="container">
+      <h2 class="section-title reveal">核心服务</h2>
+      {([
+        { icon: '🔍', title: 'GEOAI搜索优化', problem: '企业品牌在AI搜索结果中不可见，错失海量AI搜索流量', solution: '通过品牌信源矩阵搭建，在豆包、DeepSeek、Kimi等AI平台中构建多维度品牌信息图谱，提升AI对品牌的专业认知度与推荐权重', deliver: 'AI搜索品牌曝光量提升、关键词被推荐率、月度流量增长报告' },
+        { icon: '🤖', title: 'AI智能体定制', problem: '客户咨询量大、人工客服成本高、夜间无人响应', solution: '为企业量身定制AI智能体，基于大语言模型构建，可完成客户接待、产品介绍、线索筛选、预约跟进等全流程工作，7×24小时不间断', deliver: '可部署的AI智能体系统、定制对话策略、月度性能优化报告' },
+        { icon: '👤', title: 'AI数字人服务', problem: '短视频/直播获客门槛高、内容生产人力不足', solution: '通过AI数字人技术生成企业专属虚拟形象，支持短视频口播、直播带货、在线讲解等场景，大幅降低内容生产成本', deliver: '专属数字人形象、视频/直播内容制作、多平台分发方案' },
+        { icon: '📈', title: '企业AI获客方案', problem: '获客渠道单一、线索质量差、转化率低', solution: '结合GEOAI优化+AI智能体+精准投流，构建从曝光到成交的AI全链路获客体系', deliver: '月度线索增长数据、各渠道ROI分析报告、持续优化建议' },
+      ]).map((svc, i) => (
+        <div class="svc-block reveal">
+          <div class="svc-left">
+            <span class="svc-icon">{svc.icon}</span>
+            <h3>{svc.title}</h3>
+          </div>
+          <div class="svc-right">
+            <div class="svc-item">
+              <span class="svc-label">解决的问题</span>
+              <p>{svc.problem}</p>
+            </div>
+            <div class="svc-item">
+              <span class="svc-label">服务内容</span>
+              <p>{svc.solution}</p>
+            </div>
+            <div class="svc-item">
+              <span class="svc-label">交付成果</span>
+              <p>{svc.deliver}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 服务流程 -->
+  <section class="process">
+    <div class="container">
+      <h2 class="section-title reveal">服务流程</h2>
+      <div class="process-flow reveal">
+        {['需求诊断','方案定制','信源搭建','优化落地','数据迭代'].map((step, i) => (
+          <div class="process-step">
+            <span class="step-num">{i + 1}</span>
+            <span class="step-label">{step}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 套餐 -->
+  <section class="plans">
+    <div class="container">
+      <h2 class="section-title reveal">服务套餐</h2>
+      <div class="plan-cards reveal">
+        <div class="card plan-card">
+          <h3>基础版</h3>
+          <div class="plan-price"><span class="accent">基础诊断</span> + 核心优化</div>
+          <ul class="plan-features">
+            <li>品牌AI搜索现状诊断</li>
+            <li>3个核心平台信源搭建</li>
+            <li>月度曝光数据报告</li>
+            <li>在线策略咨询</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">获取报价</a>
+        </div>
+        <div class="card plan-card plan-featured">
+          <h3>进阶版 <span class="plan-badge">推荐</span></h3>
+          <div class="plan-price"><span class="accent">全平台</span> GEOAI优化</div>
+          <ul class="plan-features">
+            <li>基础版全部内容</li>
+            <li>6+AI平台信源矩阵</li>
+            <li>AI智能体搭建部署</li>
+            <li>双周数据复盘+策略调整</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary">获取报价</a>
+        </div>
+        <div class="card plan-card">
+          <h3>定制版</h3>
+          <div class="plan-price"><span class="accent">全链路</span> AI获客方案</div>
+          <ul class="plan-features">
+            <li>进阶版全部内容</li>
+            <li>AI数字人定制</li>
+            <li>多平台内容矩阵搭建</li>
+            <li>专属客户成功经理</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline">获取报价</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Comparison Table */
+  .comparison { background: var(--bg-primary); }
+  .comparison h2 { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; color: var(--text-primary); letter-spacing: -0.02em; }
+  .compare-table { max-width: 800px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .compare-row { display: grid; grid-template-columns: 2fr 1.5fr 2fr; padding: 1rem 1.5rem; font-size: 0.9rem; align-items: center; }
+  .compare-row:not(:last-child) { border-bottom: 1px solid var(--border); }
+  .compare-header { background: var(--bg-card); font-weight: 600; font-size: 0.85rem; color: var(--text-primary); }
+  .compare-row span:first-child { font-weight: 500; color: var(--text-primary); }
+  .compare-row span:not(:first-child) { color: var(--text-secondary); }
+  .accent-col { color: var(--accent) !important; font-weight: 600; }
+
+  /* Service Details */
+  .service-details { background: var(--bg-primary); }
+  .service-details .section-title { text-align: center; margin-bottom: 3rem; }
+  .svc-block { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 1px solid var(--border); }
+  .svc-block:last-child { border-bottom: none; }
+  .svc-left { display: flex; flex-direction: column; gap: 0.5rem; }
+  .svc-icon { font-size: 2rem; }
+  .svc-left h3 { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); }
+  .svc-right { display: flex; flex-direction: column; gap: 1.25rem; }
+  .svc-label { font-size: 0.75rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem; display: inline-block; }
+  .svc-item p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+
+  /* Process */
+  .process { background: var(--bg-primary); }
+  .process .section-title { text-align: center; margin-bottom: 3rem; }
+  .process-flow { display: flex; justify-content: center; align-items: center; gap: 0; }
+  .process-step { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; flex: 1; position: relative; }
+  .process-step::after { content: ''; position: absolute; top: 16px; left: 60%; width: 80%; height: 1px; background: var(--border); }
+  .process-step:last-child::after { display: none; }
+  .step-num { width: 32px; height: 32px; border: 1.5px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+  .process-step:nth-child(4) .step-num, .process-step:nth-child(5) .step-num { background: var(--accent); color: white; }
+  .step-label { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
+
+  /* Plans */
+  .plans { background: var(--bg-primary); }
+  .plans .section-title { text-align: center; margin-bottom: 3rem; }
+  .plan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
+  .plan-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-primary); }
+  .plan-price { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.25rem; }
+  .plan-price .accent { color: var(--accent); font-weight: 600; }
+  .plan-features { list-style: none; margin-bottom: 1.5rem; }
+  .plan-features li { padding: 0.5rem 0; font-size: 0.85rem; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+  .plan-features li:last-child { border-bottom: none; }
+  .plan-featured { position: relative; }
+  .plan-badge { font-size: 0.7rem; background: var(--accent); color: white; padding: 0.15rem 0.5rem; border-radius: 3px; margin-left: 0.5rem; }
+
+  @media (max-width: 768px) {
+    .compare-row { grid-template-columns: 1fr 1fr 1fr; padding: 0.75rem 1rem; font-size: 0.8rem; }
+    .svc-block { grid-template-columns: 1fr; gap: 1.5rem; }
+    .process-flow { flex-wrap: wrap; gap: 1.5rem; }
+    .process-step::after { display: none; }
+    .plan-cards { grid-template-columns: 1fr; }
+  }
+</style>
