@@ -1,0 +1,55 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const industries = [
+  { icon: '📚', name: '教培行业', pain: 'AI搜索流量占行业搜索量的34%，传统SEM成本翻倍', solution: '搭建教培品牌GEO信源矩阵，覆盖家长高频AI搜索场景，提升机构在AI推荐的优先级' },
+  { icon: '🏪', name: '本地生活', pain: '用户从"搜商家"转向"问AI推荐"，传统评价权重正在被AI替代', solution: '构建门店AI品牌画像，在AI平台中植入结构化口碑信息，提升AI推荐准确率' },
+  { icon: '🏭', name: '制造业', pain: '传统展会+电话开发模式效率下降，AI搜索成为B2B采购新入口', solution: '搭建企业技术能力AI信源库，让AI准确理解企业技术实力，匹配精准采购需求' },
+  { icon: '🏢', name: '商贸企业', pain: '产品同质化严重，难以在AI搜索结果中脱颖而出', solution: '通过品牌差异化信源优化，让AI精准识别并推荐你的核心优势' },
+];
+---
+
+<Layout title="行业解决方案" description="极芯智能为教培、本地生活、制造业、商贸等山西本地企业提供针对性的GEOAI搜索优化解决方案。">
+  <Header />
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">行业方案</span>
+      <h1>每个行业都有专属的AI增长路径</h1>
+      <p>深入本土行业，打造精准的AI获客策略</p>
+    </div>
+  </section>
+  <section class="sols">
+    <div class="container">
+      {industries.map((ind, i) => (
+        <div class="sol-card card reveal">
+          <div class="sol-left">
+            <span class="sol-icon">{ind.icon}</span>
+            <h3>{ind.name}</h3>
+          </div>
+          <div class="sol-right">
+            <div>
+              <span class="sol-label">行业痛点</span>
+              <p>{ind.pain}</p>
+            </div>
+            <div>
+              <span class="sol-label">解决方案</span>
+              <p>{ind.solution}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  <Footer />
+</Layout>
+<style>
+  .sols { background: var(--bg-primary); }
+  .sol-card { display: grid; grid-template-columns: 180px 1fr; gap: 2.5rem; margin-bottom: 1.5rem; align-items: start; }
+  .sol-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+  .sol-left h3 { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); }
+  .sol-right { display: flex; flex-direction: column; gap: 1rem; }
+  .sol-label { font-size: 0.75rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.25rem; display: inline-block; }
+  .sol-right p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+  @media (max-width: 640px) { .sol-card { grid-template-columns: 1fr; gap: 1rem; } }
+</style>
