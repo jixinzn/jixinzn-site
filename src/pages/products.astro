@@ -3,103 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
-
-<Layout title="产品服务" description="集信智能提供 AI 智能助手、知识库系统和流程自动化三大核心产品，覆盖企业智能化全场景。">
+<Layout title="产品服务" description="GEOAI搜索优化、AI智能体定制、AI数字人服务">
   <Header />
   <section class="page-hero">
     <div class="container">
-      <span class="badge">产品服务</span>
-      <h1>企业 AI 产品矩阵</h1>
-      <p>覆盖智能化全场景的三大核心产品</p>
+      <span class="section-label">产品服务</span>
+      <h1>企业AI获客全链路产品</h1>
+      <p>查看我们的 <a href="/geoai" style="color:var(--accent)">GEOAI服务页面</a> 了解详情</p>
     </div>
   </section>
-
-  <section class="product-detail" id="ai-assistant">
-    <div class="container product-item">
-      <div class="product-info">
-        <span class="product-icon">🤖</span>
-        <h2>AI 智能助手</h2>
-        <p class="product-desc">基于最新大语言模型技术，为企业打造智能、高效、可定制的 AI 对话系统。</p>
-        <ul class="product-features">
-          <li><strong>多轮对话</strong> — 精准理解上下文，流畅自然的对话体验</li>
-          <li><strong>知识库对接</strong> — 接入企业私有知识库，回答更准确</li>
-          <li><strong>多渠道接入</strong> — 网站、微信、APP 全渠道覆盖</li>
-          <li><strong>数据安全</strong> — 私有化部署，数据不出企业</li>
-          <li><strong>智能转接</strong> — 自动识别复杂问题，无缝转接人工</li>
-        </ul>
-        <a href="/contact" class="btn btn-primary">获取演示 →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="product-detail bg-alt" id="knowledge">
-    <div class="container product-item">
-      <div class="product-info">
-        <span class="product-icon">📚</span>
-        <h2>智能知识库系统</h2>
-        <p class="product-desc">企业级知识管理平台，让隐性知识显性化，显性知识结构化。</p>
-        <ul class="product-features">
-          <li><strong>文档智能解析</strong> — 自动识别 PDF、Word、图片中的文字信息</li>
-          <li><strong>知识图谱</strong> — 自动构建业务知识关联网络</li>
-          <li><strong>智能检索</strong> — 语义搜索，精准定位所需信息</li>
-          <li><strong>版本管理</strong> — 知识更新可追溯，历史版本可回溯</li>
-          <li><strong>权限控制</strong> — 精细化的访问权限管理</li>
-        </ul>
-        <a href="/contact" class="btn btn-primary">获取演示 →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="product-detail" id="workflow">
-    <div class="container product-item">
-      <div class="product-info">
-        <span class="product-icon">⚡</span>
-        <h2>流程自动化平台</h2>
-        <p class="product-desc">融合 RPA 与 AI 的智能自动化引擎，释放人力，提升效率。</p>
-        <ul class="product-features">
-          <li><strong>可视化编排</strong> — 拖拽式流程设计，零代码创建自动化</li>
-          <li><strong>AI 决策</strong> — 智能判断流程分支，处理异常情况</li>
-          <li><strong>数据提取</strong> — 自动从各类文档、系统中提取结构化数据</li>
-          <li><strong>定时任务</strong> — 自动化定时任务执行与监控告警</li>
-          <li><strong>系统集成</strong> — 对接 ERP、CRM 等企业系统</li>
-        </ul>
-        <a href="/contact" class="btn btn-primary">获取演示 →</a>
-      </div>
-    </div>
-  </section>
-
   <Footer />
 </Layout>
-
-<style>
-  .page-hero {
-    padding: 5rem 0 3rem;
-    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-    text-align: center;
-  }
-  .page-hero h1 { font-size: 2.75rem; font-weight: 800; margin: 1rem 0 0.5rem; }
-  .page-hero p { color: var(--text-light); font-size: 1.1rem; }
-  .badge {
-    display: inline-block;
-    background: rgba(37,99,235,0.1);
-    color: var(--primary);
-    padding: 0.35rem 1rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-  .product-detail { padding: 4rem 0; }
-  .bg-alt { background: var(--bg-alt); }
-  .product-item { max-width: 800px; margin: 0 auto; }
-  .product-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
-  .product-detail h2 { font-size: 2rem; margin-bottom: 1rem; }
-  .product-desc { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; line-height: 1.7; }
-  .product-features { list-style: none; margin-bottom: 2rem; }
-  .product-features li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-light);
-  }
-  .product-features li:last-child { border-bottom: none; }
-  .product-features strong { color: var(--text); }
-</style>
