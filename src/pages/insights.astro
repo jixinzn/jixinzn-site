@@ -1,0 +1,46 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+const articles = [
+  { tag:'GEOAI', title:'2026年企业AI搜索优化入门指南', date:'2026-06-20', desc:'从零理解GEOAI搜索优化的核心逻辑，掌握企业AI获客的第一步。' },
+  { tag:'AI智能体', title:'AI智能体如何帮企业降低70%客服成本', date:'2026-06-10', desc:'深入解析AI智能体在企业客服场景中的落地实践与ROI计算。' },
+  { tag:'行业洞察', title:'山西本地企业AI转型机会分析', date:'2026-05-25', desc:'山西产业结构特点决定了AI转型的独特路径，我们来看看本土企业的机会在哪里。' },
+  { tag:'AI数字人', title:'AI数字人带货：本地生活商家的新增长引擎', date:'2026-05-15', desc:'数字人技术正在改变本地生活商家的获客方式，成本仅为真人直播的1/10。' },
+];
+---
+
+<Layout title="资讯干货" description="极芯智能分享GEOAI搜索优化、AI智能体、AI数字人等前沿技术洞察与行业实践案例。">
+  <Header />
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label">资讯干货</span>
+      <h1>AI获客的前沿洞察</h1>
+      <p>技术趋势、实战案例、行业数据，助你站在AI营销最前沿</p>
+    </div>
+  </section>
+  <section class="insights-list">
+    <div class="container">
+      <div class="posts-grid">
+        {articles.map(a => (
+          <article class="card post-card reveal">
+            <span class="post-tag">{a.tag}</span>
+            <h3>{a.title}</h3>
+            <p>{a.desc}</p>
+            <time>{a.date}</time>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+<style>
+  .insights-list { background: var(--bg-primary); }
+  .posts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .post-tag { font-size: 0.75rem; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; }
+  .post-card h3 { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin: 0.75rem 0 0.5rem; line-height: 1.4; }
+  .post-card p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem; }
+  .post-card time { font-size: 0.8rem; color: var(--text-secondary); }
+  @media (max-width: 640px) { .posts-grid { grid-template-columns: 1fr; } }
+</style>
